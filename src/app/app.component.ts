@@ -10,4 +10,5 @@ import { ArticleComponent } from './article';
   directives: [HeaderComponent, ArticleComponent]
 })
 export class AppComponent {
+  title = 'The Will Will Web';
 }

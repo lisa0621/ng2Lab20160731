@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['header.component.css']
 })
 export class HeaderComponent implements OnInit {
-    title = 'The Will Will Web';
-    editortitle = this.title;
+
+    @Input()
+    title: string;
+
     titlelink = "http://blog.miniasp.com/";
+    editortitle:string;
     num = 1;
     IsEdit = false;
   constructor() {
@@ -17,6 +20,7 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.editortitle = this.title;
   }
 
   PlusOne() {
