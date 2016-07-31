@@ -33,7 +33,9 @@
 
               <input *ngIf="IsEdit" type="text" #editTitle (keypress)="eventHandler($event, editTitle)" [value]='editortitle'>
 
-           <h3 class="subtitle">記載著 Will 在網路世界的學習心得與技術分享
+           <h3 [ngClass]="{subtitle: ( num%2 == 0)}"
+               [ngStyle]="{color: 'red'}">
+             記載著 Will 在網路世界的學習心得與技術分享
                <a href="#" (click)="PlusOne()">+{{num}}</a>
             </h3>
           </hgroup>
