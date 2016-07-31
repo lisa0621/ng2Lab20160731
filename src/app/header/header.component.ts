@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
     title = 'The Will Will Web';
-
+    titlelink = "http://blog.miniasp.com/";
+    num = 1;
   constructor() {
 
    }
@@ -16,4 +17,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  PlusOne() {
+    this.num = this.num + 1;
+  }
 }
