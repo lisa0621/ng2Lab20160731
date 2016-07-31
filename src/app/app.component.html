@@ -8,10 +8,9 @@
           <div id="ctl00_cphBody_divError"></div>
           <div id="ctl00_cphBody_PostList1_posts" class="posts">
 
-            <!-- Article START-->
-            <app-article></app-article>
-            <!-- Article END-->
-
+              <!-- Article START-->
+              <app-article *ngFor="let item of data" [item]="item"></app-article>
+              <!-- Article END-->
           </div>
         </section>
 
