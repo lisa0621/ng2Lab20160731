@@ -31,7 +31,7 @@
 
               <a *ngIf="!IsEdit" (dblclick)="EnterEdit($event)" [title]="title" [innerHtml]="title"></a></h1>
 
-              <input *ngIf="IsEdit" type="text" #editTitle (keypress)="eventHandler($event, editTitle)" [value]='editortitle'>
+              <input *ngIf="IsEdit" type="text" #editTitle (keypress)="eventHandler($event, editTitle)" [value]='title'>
 
            <h3 [ngClass]="{subtitle: ( num%2 == 0)}"
                [ngStyle]="{color: 'red'}">

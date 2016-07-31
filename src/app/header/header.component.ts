@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
     title: string;
 
     titlelink = "http://blog.miniasp.com/";
-    editortitle:string;
     num = 1;
     IsEdit = false;
   constructor() {
@@ -20,7 +19,6 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.editortitle = this.title;
   }
 
   PlusOne() {
