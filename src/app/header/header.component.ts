@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
     editortitle = this.title;
     titlelink = "http://blog.miniasp.com/";
     num = 1;
+    IsEdit = false;
   constructor() {
 
    }
@@ -22,12 +23,18 @@ export class HeaderComponent implements OnInit {
     this.num = this.num + 1;
   }
 
-  eventHandler(event: KeyboardEvent, element: HTMLInputElement) {
+  eventHandler(event: KeyboardEvent, input: HTMLInputElement) {
    //console.log(event, event.keyCode, event.keyIdentifier);
    if(event.keyCode == 13)
    {
-      console.log(element);
-      this.title = element.value;
+      this.title = input.value;
+      this.IsEdit = false;
    }
+  }
+
+  EnterEdit($event: MouseEvent)
+  {
+    this.IsEdit = true;
+    $event.preventDefault();
   }
 }
