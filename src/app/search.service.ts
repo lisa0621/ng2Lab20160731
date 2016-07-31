@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SearchService {
 
-  constructor() {
-    this.data = this.default_data;
+  constructor(private http: Http) {
+    // this.data = this.default_data;
+    // /api/articles.json
+    this.http.get('/api/articles.json')
+      .map( (res) => res.json() )
+      .subscribe( (value) => {
+        this.data = this.default_data = value;
+      });
   }
   data: any;
 
