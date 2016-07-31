@@ -22,12 +22,12 @@ export class HeaderComponent implements OnInit {
     this.num = this.num + 1;
   }
 
-  eventHandler(event, value) {
+  eventHandler(event: KeyboardEvent, element: HTMLInputElement) {
    //console.log(event, event.keyCode, event.keyIdentifier);
    if(event.keyCode == 13)
    {
-      console.log(value);
-      this.title = value;
+      console.log(element);
+      this.title = element.value;
    }
   }
 }
