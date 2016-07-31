@@ -29,7 +29,7 @@
           <hgroup class="pull-left">
             <h1><a [href]="titlelink" [title]="title" [innerHtml]="title"></a></h1>
 
-           <input type="text" (keypress)="eventHandler($event)" [(ngModel)]='editortitle'>
+           <input type="text" #editTitle (keypress)="eventHandler($event, editTitle.value)" [value]='editortitle'>
 
            <h3 class="subtitle">記載著 Will 在網路世界的學習心得與技術分享
                <a href="#" (click)="PlusOne()">+{{num}}</a>
