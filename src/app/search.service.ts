@@ -3,21 +3,24 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SearchService {
 
-  constructor() { }
+  constructor() {
+    this.data = this.default_data;
+  }
   data: any;
 
   ngOnInit() {
-    this.data = this.doSearch('');
+
   }
 
   doSearch(keyword){
      return this.data = this.default_data.filter(
       (value) => {
+        if(!keyword) return true;
         return value.title.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
       }
     );
   }
-  
+
   default_data = [
   {
     "href": "http://blog.miniasp.com/post/2016/04/30/Visual-Studio-Code-from-Command-Prompt-notes.aspx",
